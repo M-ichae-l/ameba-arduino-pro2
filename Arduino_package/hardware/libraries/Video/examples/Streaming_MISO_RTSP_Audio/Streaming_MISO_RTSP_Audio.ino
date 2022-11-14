@@ -66,5 +66,5 @@ void setup() {
 }
 
 void loop() {
-    // do nothing
+    // Do nothing
 }

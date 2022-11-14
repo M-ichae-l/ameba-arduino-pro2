@@ -10,9 +10,9 @@ CameraSetting camset1(VIDEO_FHD, CAM_FPS, VIDEO_H264, 0,
                      0, 0);
 
 CameraSetting camset2(0, 0, 0, 0, 
-                      VIDEO_HD, CAM_FPS, VIDEO_H264, 0, 
-                      0, 0, 0, 0,
-                      0, 0);
+                     VIDEO_HD, CAM_FPS, VIDEO_H264, 0, 
+                     0, 0, 0, 0,
+                     0, 0);
 CameraClass cam1;
 CameraClass cam2;
 AudioClass audio;
