@@ -1,4 +1,4 @@
-#include "camera_drv.h"
+#include "video_drv.h"
 #include "mmf2_link.h"
 #include "mmf2_siso.h"
 #include "base_type.h"

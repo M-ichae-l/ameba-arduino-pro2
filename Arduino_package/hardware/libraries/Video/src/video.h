@@ -1,11 +1,11 @@
-#ifndef __CAMERA_H__
-#define __CAMERA_H__
+#ifndef __VIDEO_H__
+#define __VIDEO_H__
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#include "camera_drv.h"
+#include "video_drv.h"
 
 #ifdef __cplusplus
 }
@@ -144,13 +144,13 @@ class CameraSetting {
         int _v4_w;
         int _v4_h;
 
-        friend class CameraClass;
+        friend class VideoClass;
 };
 
-class CameraClass {
+class VideoClass {
     public:
-        CameraClass(void);
-        ~CameraClass();
+        VideoClass(void);
+        ~VideoClass();
 
         void init(CameraSetting& obj);
         void init(int w, int h, int bps, int preset);

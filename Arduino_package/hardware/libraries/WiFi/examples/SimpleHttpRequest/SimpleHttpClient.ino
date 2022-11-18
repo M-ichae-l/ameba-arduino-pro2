@@ -15,12 +15,9 @@ void setup() {
     while (!Serial) {
         ;
     }
-    // check for the presence of the shield:
-    if (WiFi.status() == WL_NO_SHIELD) {
-        Serial.println("WiFi shield not present");
-        // don't continue:
-        while (true);
-    }
+
+    // check for WiFi status:
+    status = WiFi.status();
 
     // attempt to connect to Wifi network:
     while (status != WL_CONNECTED) {
@@ -72,7 +69,7 @@ void printWifiStatus() {
     Serial.print("SSID: ");
     Serial.println(WiFi.SSID());
 
-    // print your WiFi shield's IP address:
+    // print your WiFi IP address:
     IPAddress ip = WiFi.localIP();
     Serial.print("IP Address: ");
     Serial.println(ip);

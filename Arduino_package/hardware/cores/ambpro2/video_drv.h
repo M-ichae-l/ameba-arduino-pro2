@@ -1,5 +1,5 @@
-#ifndef camera_drv_h
-#define camera_drv_h
+#ifndef video_drv_h
+#define video_drv_h
 
 #include <stdint.h>
 #include <FreeRTOS.h>

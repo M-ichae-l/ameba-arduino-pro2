@@ -1,11 +1,11 @@
 #include <Arduino.h>
-#include "camera.h"
+#include "video.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#include "camera_drv.h"
+#include "video_drv.h"
 
 #ifdef __cplusplus
 }
@@ -123,18 +123,18 @@ CameraSetting::CameraSetting(uint8_t resolution, uint8_t fps, uint8_t decoder, u
     _v3_h = VIDEO_FHD_HEIGHT;
 }
 
-CameraClass::CameraClass() {
+VideoClass::VideoClass() {
     video_data = NULL;
 };
 
-CameraClass::~CameraClass(){};
+VideoClass::~VideoClass(){};
 
 /**
   * @brief  initialization for the camera sensor
   * @param  obj        : object pointer of CameraSetting Class
   * @retval none
   */
-void CameraClass::init(CameraSetting& obj) {
+void VideoClass::init(CameraSetting& obj) {
     int bps = CAM_BPS;
     // update bps for v3
     if (obj._v3_decoder == VIDEO_JPEG) {
@@ -172,7 +172,7 @@ void CameraClass::init(CameraSetting& obj) {
                       different camera presets
   * @retval  none
   */
-void CameraClass::init (int v1_w, int v1_h, int v1_bps,
+void VideoClass::init (int v1_w, int v1_h, int v1_bps,
                         int v2_w, int v2_h, int v2_bps,
                         int v3_w, int v3_h, int v3_bps,
                         int v4_w, int v4_h) {
@@ -198,7 +198,7 @@ void CameraClass::init (int v1_w, int v1_h, int v1_bps,
             snapshot: eanble or disable snapshot function
   * @retval  none
   */
-void CameraClass::init_new(int v1_enable, int v1_w, int v1_h, int v1_bps, int v1_snapshot, 
+void VideoClass::init_new(int v1_enable, int v1_w, int v1_h, int v1_bps, int v1_snapshot, 
                                int v2_enable, int v2_w, int v2_h, int v2_bps, int v2_snapshot, 
                                int v3_enable, int v3_w, int v3_h, int v3_bps, int v3_snapshot, 
                                int v4_enable, int v4_w, int v4_h) {
@@ -220,7 +220,7 @@ void CameraClass::init_new(int v1_enable, int v1_w, int v1_h, int v1_bps, int v1
   * @param  void pointer to video obj
   * @retval  none
   */
-void CameraClass::deinit(void) {
+void VideoClass::deinit(void) {
     if (cameraDeInit(video_data) == NULL) {
         printf("Camera Sensor deinit Done.\r\n");
     } else {
@@ -233,7 +233,7 @@ void CameraClass::deinit(void) {
   * @param  void pointer to video obj
   * @retval  none
   */
-void CameraClass::open(void) {
+void VideoClass::open(void) {
     int stream_id   = V1_CHANNEL;
     int type        = VIDEO_TYPE; 
     int res         = VIDEO_FHD; 
@@ -252,7 +252,7 @@ void CameraClass::open(void) {
   * @param  void pointer to video obj
   * @retval  none
   */
-void CameraClass::open(CameraSetting& obj) {
+void VideoClass::open(CameraSetting& obj) {
 
     video_data = cameraInit();
     
@@ -337,7 +337,7 @@ void CameraClass::open(CameraSetting& obj) {
             rc_mode  : enable or disable constant rate mode
   * @retval  none
   */
-void CameraClass::open(mm_context_t *p, void *p_priv, int stream_id, int type, int res, int w, int h, int bps, int fps, int gop, int rc_mode, int snapshot) {
+void VideoClass::open(mm_context_t *p, void *p_priv, int stream_id, int type, int res, int w, int h, int bps, int fps, int gop, int rc_mode, int snapshot) {
     cameraOpen(p, p_priv, stream_id, type, res, w, h, bps, fps, gop, rc_mode, snapshot);
 }
 
@@ -346,7 +346,7 @@ void CameraClass::open(mm_context_t *p, void *p_priv, int stream_id, int type, i
   * @param  void pointer to video obj
   * @retval  none
   */
-void CameraClass::start(CameraSetting& obj) {
+void VideoClass::start(CameraSetting& obj) {
 
     if (obj._resolution) {
         cameraStart(video_data->priv, obj._streaming_id);
@@ -389,7 +389,7 @@ void CameraClass::start(CameraSetting& obj) {
   * @param  none
   * @retval data pointer
   */
-mm_context_t *CameraClass::getIO(void) {
+mm_context_t *VideoClass::getIO(void) {
     //To check if camera sensor init is done
     if (video_data == NULL) {
         printf("\r\nPlease init camera sensor first.\r\n");
@@ -404,7 +404,7 @@ mm_context_t *CameraClass::getIO(void) {
   * @param  none
   * @retval none
   */
-void CameraClass::close(void) {
+void VideoClass::close(void) {
     cameraStopVideoStream(video_data->priv, V1_CHANNEL);
 }
 
@@ -414,7 +414,7 @@ void CameraClass::close(void) {
             cb_flag : whether enable snapshot call back function
   * @retval none
   */
-void CameraClass::getP(CameraSetting& obj, bool cb_flag) {
+void VideoClass::getP(CameraSetting& obj, bool cb_flag) {
     if (cb_flag == 0) {
         CAMDBG("snapshot cb disabled\r\n");
         cameraSnapshot(video_data->priv, obj._v3_streaming_id);
@@ -430,6 +430,6 @@ void CameraClass::getP(CameraSetting& obj, bool cb_flag) {
             cb_flag : whether enable snapshot call back function
   * @retval none
   */
-void CameraClass::setFPS(int fps) {
+void VideoClass::setFPS(int fps) {
     video_set_framerate(fps);
 }
