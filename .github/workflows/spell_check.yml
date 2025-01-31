@@ -1,6 +1,6 @@
 # This workflow runs spell_check test for Ameba Arduino SDK
 
-name: Check word spell
+name: Check word spelll
 on: [push, pull_request]
 #  workflow_dispatch:
 jobs:
