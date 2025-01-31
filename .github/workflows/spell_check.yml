@@ -23,6 +23,6 @@ jobs:
       with:
         exclude_file: Arduino_package/hardware/libraries/SPI/src/JPEGDEC_Libraries/
         skip: Arduino_package/hardware/libraries/NeuralNetwork/examples/AudioClassification/AudioClassList.h,Arduino_package/hardware/libraries/USB/src/usbd_uvc_parm.c,Arduino_package/hardware/libraries/SPI/src/JPEGDEC_Libraries/jpeg.inl
-        ignore_words_list: ameba,re-used
+        ignore_words_list: ameba
 #        ignore_words_file: Ameba_misc/Spell_Check_Ignore/.codespellignore
         path: ${{ matrix.path }}
