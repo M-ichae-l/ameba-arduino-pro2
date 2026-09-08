@@ -34,11 +34,6 @@
             },
             {
               "packager": "realtek",
-              "name": "ameba_pro2_toolchain2",
-              "version": "1.0.2-p2"
-            },
-            {
-              "packager": "realtek",
               "name": "ameba_pro2_tools",
               "version": "1.4.14"
             },
