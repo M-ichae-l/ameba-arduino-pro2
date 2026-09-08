@@ -1336,28 +1336,28 @@
               "host":"i686-mingw32",
               "archiveFileName":"ameba_pro2_toolchain_windows-1.0.2-p1.tar.bz2",
               "url":"https://github.com/Ameba-AIoT/ameba-toolchain/releases/download/V10.4.1-ameba-rtos-pro2/ameba_pro2_toolchain_windows-1.0.2-p1.tar.bz2",
-              "checksum":"SHA-256:sha256:2c157ab2256778078c8183fe8c3948bccb767a39576b560755cb49f08699d31d",
+              "checksum":"SHA-256:2c157ab2256778078c8183fe8c3948bccb767a39576b560755cb49f08699d31d",
               "size":"325499247"
             },
             {
               "host":"x86_64-pc-linux-gnu",
               "archiveFileName":"ameba_pro2_toolchain_linux-1.0.2-p1.tar.bz2",
               "url":"https://github.com/Ameba-AIoT/ameba-toolchain/releases/download/V10.4.1-ameba-rtos-pro2/ameba_pro2_toolchain_linux-1.0.2-p1.tar.bz2",
-              "checksum":"SHA-256:sha256:03c154f7477ec53bfbe03bdbc6d330f84e7be74263be612cf10ed414e423d067",
+              "checksum":"SHA-256:03c154f7477ec53bfbe03bdbc6d330f84e7be74263be612cf10ed414e423d067",
               "size":"284657939"
             },
             {
               "host":"x86_64-apple-darwin",
               "archiveFileName":"ameba_pro2_toolchain_macos-1.0.2-p1.tar.bz2",
               "url":"https://github.com/Ameba-AIoT/ameba-toolchain/releases/download/V10.4.1-ameba-rtos-pro2/ameba_pro2_toolchain_macos-1.0.2-p1.tar.bz2",
-              "checksum":"SHA-256:sha256:d30499d21170d300a245efa1d71e0853de11784f5d5f46c6ac3a8910ea5dce06",
+              "checksum":"SHA-256:d30499d21170d300a245efa1d71e0853de11784f5d5f46c6ac3a8910ea5dce06",
               "size":"277744904"
             },
             {
               "host":"arm64-apple-darwin",
               "archiveFileName":"ameba_pro2_toolchain_macos_arm-1.0.2-p1.tar.bz2",
               "url":"https://github.com/Ameba-AIoT/ameba-toolchain/releases/download/V10.4.1-ameba-rtos-pro2/ameba_pro2_toolchain_macos_arm-1.0.2-p1.tar.bz2",
-              "checksum":"SHA-256:sha256:sha256:8cd445e88bb4a69e92b95f413fa80dedc14bafd27587feaf0d4d20eb0f79424c",
+              "checksum":"SHA-256:8cd445e88bb4a69e92b95f413fa80dedc14bafd27587feaf0d4d20eb0f79424c",
               "size":"282928703"
             }
           ]
